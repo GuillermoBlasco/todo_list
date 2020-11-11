@@ -1,8 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 import TaskList from "./components/TaskList";
 import Footer from "./components/Footer";
-import data from './tasks.json';
-import {useTasks} from "./hooks/pagination";
+import {useTasks} from "./hooks/tasks";
 
 function App() {
   const { tasks, pagination, search } = useTasks();

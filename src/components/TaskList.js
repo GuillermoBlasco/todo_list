@@ -1,6 +1,6 @@
 import React from "react";
 
-function TaskItem({ id, title, completed }) {
+function TaskItem({ title, completed }) {
   return (
     <li>
       <input type="checkbox" checked={completed} />
@@ -9,7 +9,6 @@ function TaskItem({ id, title, completed }) {
         <button>Clone</button>
         <button>X</button>
       </span>
-
     </li>
   );
 }

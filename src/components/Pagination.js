@@ -1,8 +1,6 @@
 import React from "react";
 
-
 export const Pagination = ({ pagination }) => {
-
   return (<div>
     {!pagination.isFirstPage && <button onClick={pagination.prevPage}>
       Prev
