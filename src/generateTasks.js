@@ -1,4 +1,3 @@
-
 const names = ['Mario', 'Pablo', 'Marta', 'Matilde', 'Manuel', 'Manel', 'Maite'];
 const prefix = ['Ayudar a', 'Cocinar para', 'Llamar a', 'Enviar email a'];
 
@@ -12,7 +11,7 @@ const randomPrefix = () => {
 const amount = 100;
 const tasks = [];
 let i = 0;
-for(i = 0; i < amount; i++) {
+for (i = 0; i < amount; i++) {
   const thisTask = {
     id: i,
     completed: Math.random() > 0.5,

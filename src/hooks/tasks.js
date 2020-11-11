@@ -11,7 +11,7 @@ export const useTasks = () => {
   const lastPage = Math.ceil(matchingTasks.length / pageSize);
   const pageTasks = matchingTasks.slice(page * pageSize, (page + 1) * pageSize);
   const leftToComplete = tasks.filter(x => !x.completed).length;
-  return  {
+  return {
     search: {
       value: search,
       setSearch,

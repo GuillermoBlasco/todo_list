@@ -3,7 +3,7 @@ import {Pagination} from "./Pagination";
 
 const pageSize = 10;
 
-function Footer({ tasks, pagination }) {
+function Footer({tasks, pagination}) {
   return (
     <footer>
       <div>
@@ -13,7 +13,7 @@ function Footer({ tasks, pagination }) {
         <button>Load More</button>
         <button>Clean Completed</button>
       </div>
-      <Pagination pagination={pagination} />
+      <Pagination pagination={pagination}/>
     </footer>
   );
 }

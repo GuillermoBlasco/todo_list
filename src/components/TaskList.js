@@ -1,9 +1,9 @@
 import React from "react";
 
-function TaskItem({ title, completed }) {
+function TaskItem({title, completed}) {
   return (
     <li>
-      <input type="checkbox" checked={completed} />
+      <input type="checkbox" checked={completed}/>
       <p>{title}</p>
       <span>
         <button>Clone</button>
@@ -13,11 +13,11 @@ function TaskItem({ title, completed }) {
   );
 }
 
-function TaskList({ tasks }) {
+function TaskList({tasks}) {
   return (
     <ul className="TaskList">
-      {tasks.map(({ id, title, completed }) => (
-        <TaskItem key={id} title={title} completed={completed} id={id} />
+      {tasks.map(({id, title, completed}) => (
+        <TaskItem key={id} title={title} completed={completed} id={id}/>
       ))}
     </ul>
   );
