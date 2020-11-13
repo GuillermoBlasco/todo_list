@@ -1,19 +1,18 @@
 import React from "react";
 import {Pagination} from "./Pagination";
+import {TaskContextProvider, useTasks} from "../hooks/tasks";
 
-const pageSize = 10;
-
-function Footer({ tasks, pagination }) {
+function Footer() {
+  const { tasks } = useTasks();
   return (
     <footer>
       <div>
         <strong>{tasks.leftToComplete}</strong> tasks left.
       </div>
       <div>
-        <button>Load More</button>
-        <button>Clean Completed</button>
+        <button onClick={tasks.cleanCompleted}>Clean Completed</button>
       </div>
-      <Pagination pagination={pagination} />
+      <Pagination/>
     </footer>
   );
 }

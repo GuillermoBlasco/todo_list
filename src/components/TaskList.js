@@ -1,23 +1,32 @@
 import React from "react";
+import {useTasks} from "../hooks/tasks";
 
-function TaskItem({ title, completed }) {
+function TaskItem({ title, completed, id }) {
+  const {tasks} = useTasks();
+  const handleCheckboxClick = () => {
+    tasks.switchCompletedOfTask(id);
+  }
+  const handleRemoveTaskClick = () => {
+    tasks.deleteTask(id);
+  }
   return (
     <li>
-      <input type="checkbox" checked={completed} />
+      <input type="checkbox" checked={completed} onClick={handleCheckboxClick} />
       <p>{title}</p>
       <span>
-        <button>Clone</button>
-        <button>X</button>
+        <button onClick={() => tasks.addTask('Copy of ' + title)}>Clone</button>
+        <button onClick={handleRemoveTaskClick}>X</button>
       </span>
     </li>
   );
 }
 
-function TaskList({ tasks }) {
+function TaskList() {
+  const {tasks} = useTasks();
   return (
     <ul className="TaskList">
-      {tasks.map(({ id, title, completed }) => (
-        <TaskItem key={id} title={title} completed={completed} id={id} />
+      {tasks.pageTasks.map(task => (
+        <TaskItem key={task.id} {...task} />
       ))}
     </ul>
   );
